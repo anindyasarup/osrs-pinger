@@ -9,7 +9,7 @@ def create_config():
 
     config = {}
 
-    config['logger_filename'] = os.path.join(Path(config_data['logger']['folder_location']),
-                                             config_data['logger']['file_name'])
+    config['log_filename'] = os.path.join(Path(config_data['logger']['folder_location']),
+                                          config_data['logger']['file_name'])
 
     return config
