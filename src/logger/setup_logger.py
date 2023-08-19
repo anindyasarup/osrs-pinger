@@ -16,9 +16,9 @@ class LoggerSingleton:
         self._logger = logging.getLogger(__name__)
         self._logger.setLevel(logging.DEBUG)
 
+        datefmt = '%Y-%m-%d %H:%M:%S'
         formatter = logging.Formatter(
-            '%(asctime)s | %(levelname)s | %(filename)s:%(lineno)s ||> %(message)s',
-            datefmt='%Y-%m-%d %H:%M:%S')
+            '%(asctime)s | %(levelname)s | %(filename)s:%(lineno)s ||> %(message)s', datefmt)
 
         console_handler = logging.StreamHandler()
         console_handler.setFormatter(formatter)
