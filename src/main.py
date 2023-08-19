@@ -7,9 +7,6 @@ modules = create_modules(config)
 
 def main():
     print("Hello, OSRS Pinger!")
-    logger = modules["logger"]
-
-    logger.info("test")
 
 
 if __name__ == "__main__":
