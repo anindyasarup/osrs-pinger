@@ -17,12 +17,11 @@ def create_config() -> dict:
     with open('src/config.json', 'r', encoding='utf-8') as config_file:
         config_data = json.load(config_file)
 
-    config = {}
-
     logger = {}
     logger["log_folder"] = Path(config_data['logger']['folder_location'])
     logger["log_filename"] = config_data['logger']['file_name']
 
+    config = {}
     config["logger"] = logger
 
     return config
