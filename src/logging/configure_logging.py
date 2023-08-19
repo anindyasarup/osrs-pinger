@@ -15,17 +15,20 @@ Usage:
 import logging
 
 
-def config_logging(log_level: int):
+def config_logging(log_filename: str, log_level: int):
     """
     Configure Python 'logging' module with the given 'log_level'
 
     Args:
-        log_level (int): log_level to configure the logging at program entry.
+        log_filename (str): name of the log file.
+        log_level (int): log level to configure the logging at program entry.
     """
     logging.basicConfig(
+        filename=log_filename,
         level=log_level,
-        format="%(asctime)s - %(name)s - %(levelname)s - %(message)s",
+        format="%(asctime)s - %(name)s | %(levelname)s | %(message)s",
         handlers=[
-            logging.StreamHandler()
+            logging.StreamHandler(),
+            logging.FileHandler(log_filename)
         ]
     )

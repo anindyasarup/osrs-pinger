@@ -1,0 +1,6 @@
+{
+    "logger": {
+        "folder_location": "../.local/",
+        "file_name": "osrs_pinger.log"
+    }
+}
