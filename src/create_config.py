@@ -1,22 +1,19 @@
 """
 This module provides a function for generating a configuration dictionary based on 
 the data stored in a JSON configuration file.
-
-Functions:
-    create_config()
-        Reads the contents of 'src/config.json', processes the data, and creates a
-        configuration dictionary with relevant information.
-
-Usage:
-    To use this module, import it and call the 'create_config()' function. This function reads the
-    JSON configuration file and extracts information such as log file details.
 """
 from pathlib import Path
-import os
 import json
 
 
-def create_config():
+def create_config() -> dict:
+    """
+    Reads the contents of 'config.json', processes the data, and maps it to the
+    configuration dictionary with relevant information.
+
+    Returns:
+        dict: config mapped to config.json
+    """
     with open('src/config.json', 'r', encoding='utf-8') as config_file:
         config_data = json.load(config_file)
 
