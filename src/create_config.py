@@ -18,10 +18,14 @@ def create_config() -> dict:
         config_data = json.load(config_file)
 
     logger = {}
-    logger["log_folder"] = Path(config_data['logger']['folder_location'])
-    logger["log_filename"] = config_data['logger']['file_name']
+    logger['log_folder'] = Path(config_data['logger']['folder_location'])
+    logger['log_filename'] = config_data['logger']['file_name']
+
+    osrs = {}
+    osrs['worlds'] = config_data['osrs']['worlds']
 
     config = {}
-    config["logger"] = logger
+    config['logger'] = logger
+    config['osrs'] = osrs
 
     return config
