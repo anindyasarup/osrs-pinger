@@ -1,4 +1,2 @@
-from pinger.create_process_args import create_process_args
-from pinger.create_process_object import create_process_object
-from pinger.execute_process_object import execute_process_object
-from pinger.parse_process_output import parse_process_output
+from pinger.create_ping_args import create_ping_args
+from pinger.parse_ping_output import parse_ping_output
