@@ -3,7 +3,14 @@
         "folder_location": "./.local/",
         "file_name": "osrs_pinger.log"
     },
+    "process": {
+        "command": "ping",
+        "quiet_argument": "-q",
+        "count_argument": "-c",
+        "count": "5"
+    },
     "osrs": {
+        "host": "oldschool_world.runescape.com",
         "worlds": [
             87,
             88,

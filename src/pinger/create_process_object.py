@@ -20,7 +20,9 @@ def create_process_object(logger, process_args: Union[str, List[str]]) -> subpro
             process arguments 
     """
     try:
-        logger.info("Creating process Object")
+        logger.info('Creating process object with the ' +
+                    'following arguments: %s', process_args)
+
         process = subprocess.Popen(process_args,
                                    stdin=subprocess.PIPE,
                                    stdout=subprocess.PIPE,
