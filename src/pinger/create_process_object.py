@@ -22,10 +22,14 @@ def create_process_object(logger, process_args: Union[str, List[str]]) -> subpro
     try:
         logger.info("Creating process Object")
         process = subprocess.Popen(process_args,
-                                   shell=True,
                                    stdin=subprocess.PIPE,
                                    stdout=subprocess.PIPE,
                                    universal_newlines=True)
         return process
-    except Exception as ex:
-        logger.error("An exception occurred: %s", ex)
+    except ValueError as ex:
+        logger.error('The process command was executed with invalid arguments')
+        logger.error('%s', ex)
+    except OSError as ex:
+        logger.error('The command could not be executed, or some error \
+                     occurred during the process creation')
+        logger.error('%s', ex)

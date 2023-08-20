@@ -1,7 +1,7 @@
 import subprocess
 
 
-def execute_process_object(world: int, logger, process):
+def execute_process_object(logger, process):
     try:
         ping_out, _ = process.communicate()
         return ping_out
