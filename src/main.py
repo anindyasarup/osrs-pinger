@@ -11,7 +11,9 @@ def main():
 
     logger.info("Hello, OSRS Pinger!")
 
-    get_avg_ping(config, logger)
+    rtt = get_avg_ping(config, logger)
+
+    logger.info(rtt)
 
 
 if __name__ == "__main__":
