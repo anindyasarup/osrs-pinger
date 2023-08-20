@@ -3,7 +3,7 @@ This module provides a function for setting up essential modules required
 for the project's execution. It follows the principles of dependency 
 injection to setup singleton instances of modules used in the project.
 """
-from logger.setup_logger import LoggerSingleton
+from logger.create_logger import LoggerSingleton
 
 
 def create_modules(config: dict) -> dict:
