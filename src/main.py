@@ -1,5 +1,3 @@
-import logging
-
 from create_config import create_config
 from create_modules import create_modules
 
@@ -8,7 +6,7 @@ modules = create_modules(config)
 
 
 def main():
-    logger: logging.Logger = modules['logger']
+    logger = modules['logger']
 
     logger.info("Hello, OSRS Pinger!")
 

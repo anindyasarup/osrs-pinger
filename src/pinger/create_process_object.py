@@ -24,8 +24,8 @@ def create_process_object(logger, process_args: Union[str, List[str]]) -> subpro
         process = subprocess.Popen(process_args,
                                    shell=True,
                                    stdin=subprocess.PIPE,
-                                   stdout=subprocess.PIPE)
+                                   stdout=subprocess.PIPE,
+                                   universal_newlines=True)
         return process
     except Exception as ex:
         logger.error("An exception occurred: %s", ex)
-        raise
