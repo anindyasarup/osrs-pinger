@@ -35,6 +35,7 @@ class LoggerSingleton:
 
     def _configure_logger(self, log_folder: Path, log_filename: str) -> logging.Logger:
         self._logger = logging.getLogger(__name__)
+        self._logger.setLevel(logging.DEBUG)
 
         datefmt = '%Y-%m-%d %H:%M:%S'
         formatter = logging.Formatter(
