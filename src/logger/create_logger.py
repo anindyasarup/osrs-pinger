@@ -35,7 +35,6 @@ class LoggerSingleton:
 
     def _configure_logger(self, log_folder: Path, log_filename: str) -> logging.Logger:
         self._logger = logging.getLogger(__name__)
-        self._logger.setLevel(logging.DEBUG)
 
         datefmt = '%Y-%m-%d %H:%M:%S'
         formatter = logging.Formatter(
@@ -43,12 +42,14 @@ class LoggerSingleton:
 
         console_handler = logging.StreamHandler()
         console_handler.setFormatter(formatter)
+        console_handler.setLevel(logging.DEBUG)
 
         # Create the folder if it doesn't exist
         os.makedirs(log_folder, exist_ok=True)
         file_handler = logging.FileHandler(
             os.path.join(log_folder, log_filename))
         file_handler.setFormatter(formatter)
+        file_handler.setLevel(logging.INFO)
 
         self._logger.addHandler(console_handler)
         self._logger.addHandler(file_handler)

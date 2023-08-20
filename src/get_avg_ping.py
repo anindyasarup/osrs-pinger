@@ -10,4 +10,4 @@ def get_avg_ping(config, logger):
                                                   host=config['osrs']['host'],
                                                   world=world)
 
-        # process_object = pinger.create_process_object(logger, process_args)
+        process_object = pinger.create_process_object(logger, process_args)

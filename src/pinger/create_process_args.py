@@ -6,5 +6,5 @@ def create_process_args(logger, process_config, host, world: int):
     process_args = command[:]
     process_args.append(host)
 
-    logger.info('Created Process Arguments: %s', process_args)
+    logger.debug('Created Process Arguments: %s', process_args)
     return process_args
