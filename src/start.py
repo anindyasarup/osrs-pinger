@@ -1,8 +1,4 @@
-import pinger
-import process
-
-
-def get_avg_ping(config, logger):
+def start_pinging(config, logger, pinger, process):
     worlds: list[int] = config['osrs']['worlds']
 
     rtt = {}
@@ -22,4 +18,4 @@ def get_avg_ping(config, logger):
 
         rtt[world] = {"avg": avg_rtt, "max": max_rtt}
 
-    return rtt
+    logger.info(rtt)

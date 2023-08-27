@@ -4,6 +4,8 @@ for the project's execution. It follows the principles of dependency
 injection to setup singleton instances of modules used in the project.
 """
 from logger.create_logger import LoggerSingleton
+import process
+import pinger
 
 
 def create_modules(config: dict) -> dict:
@@ -23,5 +25,7 @@ def create_modules(config: dict) -> dict:
                              log_filename=config['logger']['log_filename'])
 
     modules['logger'] = logger
+    modules['process'] = process
+    modules['pinger'] = pinger
 
     return modules
