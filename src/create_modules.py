@@ -19,11 +19,11 @@ def create_modules(config: dict) -> dict:
     Returns:
         dict: Returns a dictionary containing inialized modules
     """
-    modules = {}
 
     logger = LoggerSingleton(log_folder=config['logger']['log_folder'],
                              log_filename=config['logger']['log_filename'])
 
+    modules = {}
     modules['logger'] = logger
     modules['process'] = process
     modules['pinger'] = pinger
